@@ -1,0 +1,17 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+# Thumbnails
+._*
+# IDE
+.idea
+.project
+# npm
+node_modules
+# Log files
+*.log
