@@ -11,7 +11,10 @@ ehthumbs_vista.db
 # IDE
 .idea
 .project
+.vs
 # npm
 node_modules
 # Log files
 *.log
+#Debug
+Debug
