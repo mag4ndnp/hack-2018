@@ -16,3 +16,5 @@ ehthumbs_vista.db
 node_modules
 # Log files
 *.log
+#Debug
+Debug
