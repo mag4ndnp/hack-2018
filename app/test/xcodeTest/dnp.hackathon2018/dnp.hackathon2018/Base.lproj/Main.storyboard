@@ -52,7 +52,7 @@
         <!--View Controller-->
         <scene sceneID="bMc-Bi-fbw">
             <objects>
-                <viewController id="p2p-Lr-gVP" sceneMemberID="viewController">
+                <viewController id="p2p-Lr-gVP" customClass="ARViewController" customModule="dnp_hackathon2018" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bfU-jh-GAD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
