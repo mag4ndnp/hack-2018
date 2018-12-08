@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dnp.hackathon2018/ARViewController.swift"
-            timestampString = "565956333.670095"
+            timestampString = "565964072.324818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "updateMotion(motion:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "updateDeviceMotion(motion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
