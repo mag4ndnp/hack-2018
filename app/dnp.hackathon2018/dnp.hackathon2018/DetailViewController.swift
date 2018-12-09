@@ -17,6 +17,7 @@ class DetailViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // 詳細画面のオリジナル位置
         bottomPoint = detailView.frame.origin
     }
     

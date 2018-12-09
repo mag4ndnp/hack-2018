@@ -34,7 +34,7 @@ class SearchViewController: UIViewController {
         if (segue.identifier=="ARViewSegue") {//ここでB4でつけた名前を用いる。
             let vcTo = segue.destination as! ARViewController;// destinationViewController;
             vcTo.searchText = searchUITextField.text
-            vcTo.searchDistanceIndex = searchUISegmentedControl.selectedSegmentIndex
+            // vcTo.searchDistanceIndex = searchUISegmentedControl.selectedSegmentIndex
         }
     }
     

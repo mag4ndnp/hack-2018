@@ -14,6 +14,13 @@
 		1332671F21BBD12D003AC0A6 /* SensorConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332671E21BBD12D003AC0A6 /* SensorConnector.swift */; };
 		138DBBC421BCDF5800BC4B07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DBBC321BCDF5800BC4B07 /* DetailViewController.swift */; };
 		138DBBC721BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DBBC621BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png */; };
+		138DBBCA21BCFF4D00BC4B07 /* geolocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 138DBBC921BCFF4D00BC4B07 /* geolocation.json */; };
+		138DBBD121BD0A2100BC4B07 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138DBBD021BD0A2100BC4B07 /* SceneKit.framework */; };
+		138DBBD321BD0F9300BC4B07 /* ARScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = 138DBBD221BD0F9300BC4B07 /* ARScene.scn */; };
+		138DBBD521BD102000BC4B07 /* ARKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138DBBD421BD102000BC4B07 /* ARKit.framework */; };
+		138DBBD721BD3A8A00BC4B07 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138DBBD621BD3A8A00BC4B07 /* SpriteKit.framework */; };
+		138DBBD921BD4D4200BC4B07 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DBBD821BD4D4200BC4B07 /* pin.png */; };
+		138DBBDB21BD518D00BC4B07 /* pin_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DBBDA21BD518D00BC4B07 /* pin_selected.png */; };
 		13A1CBB421B6C554006DCFEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CBB321B6C554006DCFEB /* AppDelegate.swift */; };
 		13A1CBB621B6C554006DCFEB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CBB521B6C554006DCFEB /* SearchViewController.swift */; };
 		13A1CBB921B6C554006DCFEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A1CBB721B6C554006DCFEB /* Main.storyboard */; };
@@ -49,6 +56,13 @@
 		1332671E21BBD12D003AC0A6 /* SensorConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorConnector.swift; sourceTree = "<group>"; };
 		138DBBC321BCDF5800BC4B07 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		138DBBC621BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Modular Gallery Repeat Grid@3x.png"; sourceTree = "<group>"; };
+		138DBBC921BCFF4D00BC4B07 /* geolocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = geolocation.json; sourceTree = "<group>"; };
+		138DBBD021BD0A2100BC4B07 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		138DBBD221BD0F9300BC4B07 /* ARScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ARScene.scn; sourceTree = "<group>"; };
+		138DBBD421BD102000BC4B07 /* ARKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARKit.framework; path = System/Library/Frameworks/ARKit.framework; sourceTree = SDKROOT; };
+		138DBBD621BD3A8A00BC4B07 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		138DBBD821BD4D4200BC4B07 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		138DBBDA21BD518D00BC4B07 /* pin_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_selected.png; sourceTree = "<group>"; };
 		13A1CBB021B6C554006DCFEB /* dnp.hackathon2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dnp.hackathon2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A1CBB321B6C554006DCFEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13A1CBB521B6C554006DCFEB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138DBBD721BD3A8A00BC4B07 /* SpriteKit.framework in Frameworks */,
+				138DBBD521BD102000BC4B07 /* ARKit.framework in Frameworks */,
+				138DBBD121BD0A2100BC4B07 /* SceneKit.framework in Frameworks */,
 				1332671D21BBC00F003AC0A6 /* CoreLocation.framework in Frameworks */,
 				1332671B21B97C1D003AC0A6 /* AVFoundation.framework in Frameworks */,
 				1332671921B97C0F003AC0A6 /* CoreMotion.framework in Frameworks */,
@@ -96,6 +113,9 @@
 		1332671321B97BB6003AC0A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				138DBBD621BD3A8A00BC4B07 /* SpriteKit.framework */,
+				138DBBD421BD102000BC4B07 /* ARKit.framework */,
+				138DBBD021BD0A2100BC4B07 /* SceneKit.framework */,
 				1332671C21BBC00F003AC0A6 /* CoreLocation.framework */,
 				1332671A21B97C1D003AC0A6 /* AVFoundation.framework */,
 				1332671421B97BB6003AC0A6 /* CoreMotion.framework */,
@@ -107,8 +127,26 @@
 			isa = PBXGroup;
 			children = (
 				138DBBC621BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png */,
+				138DBBD821BD4D4200BC4B07 /* pin.png */,
+				138DBBDA21BD518D00BC4B07 /* pin_selected.png */,
 			);
 			path = img;
+			sourceTree = "<group>";
+		};
+		138DBBC821BCFDB400BC4B07 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				138DBBC921BCFF4D00BC4B07 /* geolocation.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		138DBBCB21BD031500BC4B07 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1332671E21BBD12D003AC0A6 /* SensorConnector.swift */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		13A1CBA721B6C554006DCFEB = {
@@ -135,17 +173,19 @@
 		13A1CBB221B6C554006DCFEB /* dnp.hackathon2018 */ = {
 			isa = PBXGroup;
 			children = (
+				138DBBCB21BD031500BC4B07 /* lib */,
+				138DBBC821BCFDB400BC4B07 /* data */,
 				138DBBC521BCE12F00BC4B07 /* img */,
 				13A1CBB321B6C554006DCFEB /* AppDelegate.swift */,
 				13A1CBB521B6C554006DCFEB /* SearchViewController.swift */,
 				1332671121B97858003AC0A6 /* ARViewController.swift */,
-				1332671E21BBD12D003AC0A6 /* SensorConnector.swift */,
 				138DBBC321BCDF5800BC4B07 /* DetailViewController.swift */,
 				13A1CBB721B6C554006DCFEB /* Main.storyboard */,
 				13A1CBBD21B6C555006DCFEB /* Assets.xcassets */,
 				13A1CBBF21B6C555006DCFEB /* LaunchScreen.storyboard */,
 				13A1CBC221B6C555006DCFEB /* Info.plist */,
 				13A1CBBA21B6C554006DCFEB /* dnp_hackathon2018.xcdatamodeld */,
+				138DBBD221BD0F9300BC4B07 /* ARScene.scn */,
 			);
 			path = dnp.hackathon2018;
 			sourceTree = "<group>";
@@ -272,8 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138DBBD321BD0F9300BC4B07 /* ARScene.scn in Resources */,
 				13A1CBC121B6C555006DCFEB /* LaunchScreen.storyboard in Resources */,
+				138DBBDB21BD518D00BC4B07 /* pin_selected.png in Resources */,
 				13A1CBBE21B6C555006DCFEB /* Assets.xcassets in Resources */,
+				138DBBD921BD4D4200BC4B07 /* pin.png in Resources */,
+				138DBBCA21BCFF4D00BC4B07 /* geolocation.json in Resources */,
 				13A1CBB921B6C554006DCFEB /* Main.storyboard in Resources */,
 				138DBBC721BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png in Resources */,
 			);

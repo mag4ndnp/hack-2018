@@ -209,7 +209,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egZ-zV-FoV">
-                                <rect key="frame" x="215" y="648" width="74" height="21"/>
+                                <rect key="frame" x="215" y="648" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -223,7 +223,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqw-Wd-InH">
-                                <rect key="frame" x="215" y="676" width="74" height="21"/>
+                                <rect key="frame" x="215" y="676" width="144" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -237,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3g-bh-JA2">
-                                <rect key="frame" x="215" y="706" width="74" height="21"/>
+                                <rect key="frame" x="215" y="706" width="144" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -251,7 +251,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QG3-rr-wWw">
-                                <rect key="frame" x="215" y="734" width="74" height="21"/>
+                                <rect key="frame" x="215" y="734" width="144" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -272,7 +272,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s0-Z2-Xef">
-                                <rect key="frame" x="261" y="648" width="97" height="31"/>
+                                <rect key="frame" x="28" y="735" width="54" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.61568627450000002" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="ピン">
@@ -287,6 +287,10 @@
                                     <segue destination="sR0-w1-wFa" kind="presentation" id="oDh-H7-ybP"/>
                                 </connections>
                             </button>
+                            <sceneKitView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUz-0P-pnl">
+                                <rect key="frame" x="-1" y="41" width="376" height="771"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8NZ-V1-q0Z"/>
@@ -300,6 +304,7 @@
                         <outlet property="navigationBar" destination="MBL-gm-YXq" id="b1d-Ch-ykX"/>
                         <outlet property="pitchLabel" destination="NQj-q8-mVR" id="hDO-lc-xon"/>
                         <outlet property="rollLabel" destination="zcC-u8-P5T" id="xoE-ob-zht"/>
+                        <outlet property="sceneView" destination="JUz-0P-pnl" id="1eR-Pc-pYL"/>
                         <outlet property="yawLabel" destination="PUN-ay-gBj" id="OG1-zF-KV3"/>
                     </connections>
                 </viewController>
