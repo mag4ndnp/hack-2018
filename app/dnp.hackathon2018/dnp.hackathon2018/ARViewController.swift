@@ -15,13 +15,19 @@ import SpriteKit
 
 struct SearchResult: Codable {
     let sort_type: String
-    let results: [Result]
+    let resutls: [Result]
 }
+
 struct Result: Codable {
     let id: String
     let geometry: Geometry
 }
+
 struct Geometry: Codable {
+    let location:Location
+}
+
+struct Location: Codable {
     let lat:Double
     let lng:Double
 }
@@ -158,14 +164,14 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
                 let p = sceneView.projectPoint(node.presentation.position)
                 
                 //テキストに３Dモデルのx y zを記述
-                overlay.labelNode.text = String(format: "%03.1f, %03.1f, %03.1f",
+                overlay.labelNode.text = String(format: "%0.8f, %0.8f, %0.8f",
                                                 node.presentation.position.x,
                                                 node.presentation.position.y,
                                                 node.presentation.position.z)
                 
                 let x = p.x
                 let y = p.y
-                
+                print(p)
                 //カーソルをx y に移動
                 overlay.cursorNode?.position = CGPoint(x:CGFloat(x),
                                                        y:sceneView.bounds.maxY - CGFloat(y))
@@ -194,14 +200,12 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
         let decoder: JSONDecoder = JSONDecoder()
         do {
             let json = try decoder.decode(SearchResult.self, from: data!)
+            searchResultData = data
+            searchResultJSON = json
+            createCoodinate()
         } catch let error {
             print("Error = \(error)")
         }
-        //guard let json = try? decoder.decode(SearchResult.self, from: data!) else { return }
-        
-        //searchResultData = data
-        //searchResult = json
-        //createCoodinate()
     }
     
     func getJSONData() throws -> Data? {
@@ -211,12 +215,12 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
     }
     
     func createCoodinate() {
-        let results = searchResultJSON?.results as! Array<Result>
+        let results = searchResultJSON?.resutls as! Array<Result>
         self.nodes.removeAll()
         
         for var result in results {
-            let lat = result.geometry.lat - geoLat
-            let lng = result.geometry.lng - getLng
+            let lat = result.geometry.location.lat - geoLat
+            let lng = result.geometry.location.lng - getLng
             
             // create and add a 3D box to the scene
             let boxNode = SCNNode()
