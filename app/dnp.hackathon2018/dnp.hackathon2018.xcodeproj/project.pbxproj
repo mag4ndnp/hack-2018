@@ -12,8 +12,10 @@
 		1332671B21B97C1D003AC0A6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1332671A21B97C1D003AC0A6 /* AVFoundation.framework */; };
 		1332671D21BBC00F003AC0A6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1332671C21BBC00F003AC0A6 /* CoreLocation.framework */; };
 		1332671F21BBD12D003AC0A6 /* SensorConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1332671E21BBD12D003AC0A6 /* SensorConnector.swift */; };
+		138DBBC421BCDF5800BC4B07 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138DBBC321BCDF5800BC4B07 /* DetailViewController.swift */; };
+		138DBBC721BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 138DBBC621BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png */; };
 		13A1CBB421B6C554006DCFEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CBB321B6C554006DCFEB /* AppDelegate.swift */; };
-		13A1CBB621B6C554006DCFEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CBB521B6C554006DCFEB /* ViewController.swift */; };
+		13A1CBB621B6C554006DCFEB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CBB521B6C554006DCFEB /* SearchViewController.swift */; };
 		13A1CBB921B6C554006DCFEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A1CBB721B6C554006DCFEB /* Main.storyboard */; };
 		13A1CBBC21B6C554006DCFEB /* dnp_hackathon2018.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CBBA21B6C554006DCFEB /* dnp_hackathon2018.xcdatamodeld */; };
 		13A1CBBE21B6C555006DCFEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A1CBBD21B6C555006DCFEB /* Assets.xcassets */; };
@@ -45,9 +47,11 @@
 		1332671A21B97C1D003AC0A6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1332671C21BBC00F003AC0A6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1332671E21BBD12D003AC0A6 /* SensorConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorConnector.swift; sourceTree = "<group>"; };
+		138DBBC321BCDF5800BC4B07 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		138DBBC621BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Modular Gallery Repeat Grid@3x.png"; sourceTree = "<group>"; };
 		13A1CBB021B6C554006DCFEB /* dnp.hackathon2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dnp.hackathon2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A1CBB321B6C554006DCFEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		13A1CBB521B6C554006DCFEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13A1CBB521B6C554006DCFEB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		13A1CBB821B6C554006DCFEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13A1CBBB21B6C554006DCFEB /* dnp_hackathon2018.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dnp_hackathon2018.xcdatamodel; sourceTree = "<group>"; };
 		13A1CBBD21B6C555006DCFEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		138DBBC521BCE12F00BC4B07 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				138DBBC621BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		13A1CBA721B6C554006DCFEB = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +135,12 @@
 		13A1CBB221B6C554006DCFEB /* dnp.hackathon2018 */ = {
 			isa = PBXGroup;
 			children = (
+				138DBBC521BCE12F00BC4B07 /* img */,
 				13A1CBB321B6C554006DCFEB /* AppDelegate.swift */,
-				13A1CBB521B6C554006DCFEB /* ViewController.swift */,
+				13A1CBB521B6C554006DCFEB /* SearchViewController.swift */,
 				1332671121B97858003AC0A6 /* ARViewController.swift */,
 				1332671E21BBD12D003AC0A6 /* SensorConnector.swift */,
+				138DBBC321BCDF5800BC4B07 /* DetailViewController.swift */,
 				13A1CBB721B6C554006DCFEB /* Main.storyboard */,
 				13A1CBBD21B6C555006DCFEB /* Assets.xcassets */,
 				13A1CBBF21B6C555006DCFEB /* LaunchScreen.storyboard */,
@@ -261,6 +275,7 @@
 				13A1CBC121B6C555006DCFEB /* LaunchScreen.storyboard in Resources */,
 				13A1CBBE21B6C555006DCFEB /* Assets.xcassets in Resources */,
 				13A1CBB921B6C554006DCFEB /* Main.storyboard in Resources */,
+				138DBBC721BCE16700BC4B07 /* Modular Gallery Repeat Grid@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				13A1CBBC21B6C554006DCFEB /* dnp_hackathon2018.xcdatamodeld in Sources */,
-				13A1CBB621B6C554006DCFEB /* ViewController.swift in Sources */,
+				13A1CBB621B6C554006DCFEB /* SearchViewController.swift in Sources */,
 				1332671F21BBD12D003AC0A6 /* SensorConnector.swift in Sources */,
+				138DBBC421BCDF5800BC4B07 /* DetailViewController.swift in Sources */,
 				13A1CBB421B6C554006DCFEB /* AppDelegate.swift in Sources */,
 				1332671221B97858003AC0A6 /* ARViewController.swift in Sources */,
 			);

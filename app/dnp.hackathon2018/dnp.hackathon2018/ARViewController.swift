@@ -20,6 +20,10 @@ class ARViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var gpsHLabel:UILabel!
     @IBOutlet weak var headingLabel:UILabel!
     @IBOutlet weak var cameraView:UIView!
+    @IBOutlet weak var navigationBar:UINavigationBar!
+    
+    var searchText:String?
+    var searchDistanceIndex:Int?
     
     let connector:SensorConnector = SensorConnector()
     
@@ -37,12 +41,25 @@ class ARViewController: UIViewController, CLLocationManagerDelegate {
         
         connector.setupHeading(delegateTarget: self)
         connector.setupLocation(delegateTarget: self)
+        
+        // titleの設定
+        if let title = searchText {
+            navigationBar.topItem?.title = title
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         connector.stopDeviceMotion()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
+        if (segue.identifier=="myRewindSegue") {//ここでB4でつけた名前を用いる。
+            let vcA = segue.destination as! SearchViewController;// destinationViewController;
+        }*/
+    }
+    
     
     func updateDeviceMotion(motion: CMDeviceMotion) {
         // ジャイロセンサー
