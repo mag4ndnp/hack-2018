@@ -385,6 +385,9 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="uc3-Ec-6ek"/>
                     </view>
+                    <connections>
+                        <outlet property="detailView" destination="feZ-l2-PnM" id="59Y-eh-O1F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b23-gL-3C1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="92b-cc-Xqn" userLabel="down Swipe Gesture Recognizer">
