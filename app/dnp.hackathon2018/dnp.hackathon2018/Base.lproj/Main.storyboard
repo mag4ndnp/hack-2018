@@ -331,11 +331,9 @@
                                 <rect key="frame" x="0.0" y="598" width="375" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-GQ-BNA">
-                                        <rect key="frame" x="20" y="22" width="259" height="59"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新宿東口 個室居酒屋 くずし割烹 隠れ房御庭" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSU-GQ-BNA">
+                                        <rect key="frame" x="20" y="22" width="266" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">六本木ヒルズ
-森アーツセンターギャラリー</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.46274509800000002" green="0.40000000000000002" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -382,7 +380,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="zXH-Th-Tdi">
-                                        <rect key="frame" x="287" y="28" width="69" height="61"/>
+                                        <rect key="frame" x="291" y="24" width="69" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rating.png" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-ff-KSO">
@@ -424,7 +422,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Modular Gallery Repeat Grid.png" width="121" height="166"/>
+        <image name="Modular Gallery Repeat Grid.png" width="363" height="498"/>
         <image name="Rating.png" width="195" height="29"/>
         <image name="buttonPin.png" width="19" height="27"/>
         <image name="heart.png" width="160" height="160"/>
