@@ -60,6 +60,8 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
     //var searchDistanceIndex:Int?
     
     var nodes:Array<SCNNode> = []
+    var pins:Array<SKSpriteNode> = []
+    var labels:Array<SKLabelNode> = []
     
     let connector:SensorConnector = SensorConnector()
     
@@ -88,8 +90,6 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
             navigationBar.topItem?.title = title
         }
         
-        loadJSON()
-    
         //
         // create a new scene
         let scene = SCNScene()
@@ -124,11 +124,11 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
         sceneView.showsStatistics = true
         sceneView.backgroundColor = UIColor.clear
         sceneView.overlaySKScene = OverlayScene(size:sceneView.bounds.size)
+        
+        loadJSON()
     }
     
     class OverlayScene: SKScene {
-        var labelNode = SKLabelNode()
-        var cursorNode: SKSpriteNode?
         
         override public init(size: CGSize){
             super.init(size: size)
@@ -136,16 +136,7 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
             self.scaleMode = SKSceneScaleMode.resizeFill
             self.backgroundColor = UIColor.clear
             
-            //テキストラベル
-            labelNode.fontSize = 20
-            labelNode.position.y = 0
-            labelNode.position.x = 0
-            self.addChild(labelNode)
             
-            //カーソル
-            cursorNode = SKSpriteNode(imageNamed: "pin_selected.png")
-            cursorNode?.size = CGSize.init(width: 50, height: 71)
-            self.addChild(cursorNode!)
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -156,30 +147,33 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
     func renderer(_ renderer: SCNSceneRenderer,
                   didRenderScene scene: SCNScene,
                   atTime time: TimeInterval) {
-        
-        for node in nodes {
-            if let overlay = sceneView.overlaySKScene as? OverlayScene {
-                
-                //ノードの現在地を2Dに変換
-                let p = sceneView.projectPoint(node.presentation.position)
-                
-                //テキストに３Dモデルのx y zを記述
-                overlay.labelNode.text = String(format: "%0.8f, %0.8f, %0.8f",
-                                                node.presentation.position.x,
-                                                node.presentation.position.y,
-                                                node.presentation.position.z)
-                
-                let x = p.x
-                let y = p.y
-                print(p)
-                //カーソルをx y に移動
-                overlay.cursorNode?.position = CGPoint(x:CGFloat(x),
-                                                       y:sceneView.bounds.maxY - CGFloat(y))
-                
-                //ラベルをx y に移動
-                overlay.labelNode.position = CGPoint(x:CGFloat(x),
-                                                     y:sceneView.bounds.maxY - CGFloat(y) + 40)
+        if let overlay = sceneView.overlaySKScene as? OverlayScene {
+            if nodes.count == pins.count &&
+               nodes.count == labels.count &&
+               pins.count == labels.count {
+                for i in 0..<nodes.count {
+                    let node = nodes[i]
+                    let pinNode = pins[i]
+                    let labelNode = labels[i]
+                    //ノードの現在地を2Dに変換
+                    let p = sceneView.projectPoint(node.presentation.position)
+                    let x = p.x
+                    let y = p.y
+                    
+                    labelNode.text = "あいうえお"
+                    /*
+                    labelNode.text = String(format: "%03.7f, %03.7f, %03.7f",
+                                            node.presentation.position.x,
+                                            node.presentation.position.y,
+                                            node.presentation.position.z)
+ */
+                    pinNode.position = CGPoint(x:CGFloat(x),
+                                               y:sceneView.bounds.maxY - CGFloat(y))
+                    labelNode.position = CGPoint(x:CGFloat(x),
+                                                 y:sceneView.bounds.maxY - CGFloat(y) + 40)
+                }
             }
+            
         }
     }
     
@@ -215,17 +209,30 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
     }
     
     func createCoodinate() {
-        let results = searchResultJSON?.resutls as! Array<Result>
-        self.nodes.removeAll()
+        for node in nodes{
+            node.removeFromParentNode()
+        }
+        for pinNode in pins {
+            pinNode.removeFromParent()
+        }
+        for labelNode in labels {
+            labelNode.removeFromParent()
+        }
         
-        for var result in results {
+        nodes.removeAll()
+        pins.removeAll()
+        labels.removeAll()
+        
+        let results = searchResultJSON?.resutls as! Array<Result>
+        for result in results {
             let lat = result.geometry.location.lat - geoLat
             let lng = result.geometry.location.lng - getLng
             
             // create and add a 3D box to the scene
             let boxNode = SCNNode()
             boxNode.geometry = SCNBox(width:1, height:1, length:1, chamferRadius:0.02)
-            boxNode.position = SCNVector3(lng, 0, lat)
+            let distance = sqrt(pow(lat,2.0) + pow(lng, 2.0))
+            boxNode.position = SCNVector3(lng * 10000, distance*500, -lat * 10000)
             boxNode.isHidden = true
             sceneView.scene?.rootNode.addChildNode(boxNode)
             print(boxNode.position)
@@ -241,6 +248,20 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
              */
             
             self.nodes.append(boxNode)
+            
+            //テキストラベル
+            let labelNode = SKLabelNode()
+            labelNode.fontSize = 20
+            labelNode.position.y = 0
+            labelNode.position.x = 0
+            sceneView.overlaySKScene?.addChild(labelNode)
+            labels.append(labelNode)
+            
+            //ピン
+            let pinNode = SKSpriteNode(imageNamed: "pin_selected.png")
+            pinNode.size = CGSize.init(width: 50, height: 71)
+            sceneView.overlaySKScene?.addChild(pinNode)
+            pins.append(pinNode)
         }
     }
     
@@ -270,8 +291,13 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
         // 最新の位置情報を取得 locationsに配列で入っている位置情報の最後が最新となる
         let location : CLLocation = locations.last!;
         self.gpsXLabel.text = String(format: "%0.10f", location.coordinate.latitude)
-        self.gpsYLabel.text = String(format: "%0.10f", location.coordinate.latitude)
+        self.gpsYLabel.text = String(format: "%0.10f", location.coordinate.longitude)
         self.gpsHLabel.text = String(format: "%0.10f", location.altitude)
+        
+        geoLat = 35.690417//location.coordinate.latitude
+        getLng = 139.70138180000004//location.coordinate.longitude
+        
+        createCoodinate()
     }
     
     // 位置情報の取得に失敗すると呼ばれる

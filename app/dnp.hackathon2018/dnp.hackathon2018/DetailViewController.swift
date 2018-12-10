@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController:UIViewController {
     @IBOutlet weak var detailView:UIView!
+    @IBOutlet weak var webButton:UIButton!
+    @IBOutlet weak var mapButton:UIButton!
     
     var isDetailViewToTop:Bool! = false
     var bottomPoint:CGPoint?
@@ -19,6 +21,14 @@ class DetailViewController:UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         // 詳細画面のオリジナル位置
         bottomPoint = detailView.frame.origin
+        
+        //
+        webButton.layer.borderWidth = 1.0
+        webButton.layer.borderColor = UIColor(red: 243/255, green: 198/255, blue: 143/255, alpha: 1).cgColor
+        webButton.layer.cornerRadius = 24.0
+        mapButton.layer.borderWidth = 1.0
+        mapButton.layer.borderColor = UIColor(red: 243/255, green: 198/255, blue: 143/255, alpha: 1).cgColor
+        mapButton.layer.cornerRadius = 24.0
     }
     
     @IBAction func downGesture(_ sender: UISwipeGestureRecognizer) {
