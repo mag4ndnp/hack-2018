@@ -160,15 +160,16 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
                     let x = p.x
                     let y = p.y
                     
-                    labelNode.text = "あいうえお"
+                    // labelNode.text = "あいうえお"
                     /*
                     labelNode.text = String(format: "%03.7f, %03.7f, %03.7f",
                                             node.presentation.position.x,
                                             node.presentation.position.y,
                                             node.presentation.position.z)
  */
+                    let distance = CGFloat(sqrt(pow(node.position.x, 2) + pow(node.position.z, 2)) * 10000)
                     pinNode.position = CGPoint(x:CGFloat(x),
-                                               y:sceneView.bounds.maxY - CGFloat(y))
+                                               y:sceneView.bounds.maxY - CGFloat(y) + distance)
                     labelNode.position = CGPoint(x:CGFloat(x),
                                                  y:sceneView.bounds.maxY - CGFloat(y) + 40)
                 }
@@ -232,7 +233,7 @@ class ARViewController: UIViewController, CLLocationManagerDelegate ,SCNSceneRen
             let boxNode = SCNNode()
             boxNode.geometry = SCNBox(width:1, height:1, length:1, chamferRadius:0.02)
             let distance = sqrt(pow(lat,2.0) + pow(lng, 2.0))
-            boxNode.position = SCNVector3(lng * 10000, distance*500, -lat * 10000)
+            boxNode.position = SCNVector3(lng, 0, -lat)
             boxNode.isHidden = true
             sceneView.scene?.rootNode.addChildNode(boxNode)
             print(boxNode.position)
